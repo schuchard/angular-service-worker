@@ -4,10 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "start:server": "http-server ./dist/ng-service-worker -p 4200 -o -c-1",
+    "serve:sw": "npm run build && npm run start:server"
   },
   "private": true,
   "dependencies": {
