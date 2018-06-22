@@ -19,6 +19,7 @@ import { LaunchComponent } from './launch/launch.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { environment } from '../environments/environment';
     MatIconModule,
     MatListModule,
     MatGridListModule,
-    MatTooltipModule
+    MatTooltipModule,
+    CoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

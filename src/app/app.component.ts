@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppStatusService } from './core/services/app-status.service';
 
 @Component({
   selector: 'sw-root',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Service Worker';
+
+  constructor(private appStatus: AppStatusService) {
+  }
 }
