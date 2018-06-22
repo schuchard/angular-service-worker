@@ -3,13 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "serve": "ng serve",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "start:server": "http-server ./dist/ng-service-worker -p 4200 -o -c-1",
-    "serve:sw": "npm run build && npm run start:server"
+    "start:server": "http-server ./dist/ng-service-worker -p 4200 -c-1",
+    "start": "npm run build && npm run start:server"
   },
   "private": true,
   "dependencies": {
