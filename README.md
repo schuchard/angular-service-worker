@@ -1,8 +1,20 @@
 # NgServiceWorker
 
-## Run service worker locally
+## Run the service worker locally
 
-`npm run serve:sw`
+This does a `prod` build and serves the static files from `./dist`
+
+```shell
+yarn start
+```
+
+## Start only the server
+
+*note: `-c-1` option will disable server caching*
+
+```shell
+yarn start:server
+```
 
 ---
 
