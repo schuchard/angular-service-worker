@@ -9,7 +9,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "start:server": "http-server ./dist/ng-service-worker -p 4200 -c-1",
-    "start": "npm run build && npm run start:server"
+    "start": "npm run build && npm run start:server",
+    "ngsw": "node_modules/.bin/ngsw-config dist/ng-service-worker ngsw-config.json"
   },
   "private": true,
   "dependencies": {
