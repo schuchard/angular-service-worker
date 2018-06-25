@@ -21,7 +21,7 @@ export class LaunchComponent implements OnInit, OnDestroy {
     this.http
       .get<any>(`https://api.spacexdata.com/v2/launches`)
       .pipe(takeUntil(this.destroy$))
-      .subscribe((res) => (this.allLaunches = res));
+      .subscribe((res) => (this.allLaunches = res.reverse()));
   }
 
   ngOnDestroy() {

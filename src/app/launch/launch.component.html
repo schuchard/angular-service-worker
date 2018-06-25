@@ -1,10 +1,10 @@
 <div ng-if="allLaunches | async">
-  <mat-grid-list cols="3" rowHeight="2:1" gutterSize="5px">
+  <mat-grid-list cols="3" rowHeight="2:1" gutterSize="8px">
     <mat-grid-tile *ngFor="let launch of allLaunches">
       <mat-list>
         <mat-list-item>Flight: {{launch.flight_number}} {{launch.launch_date_utc | date: 'mediumDate'}}</mat-list-item>
         <mat-list-item>{{launch.rocket.rocket_name}} - {{launch.launch_success ? 'success' : 'failure'}}</mat-list-item>
-        <mat-list-item>Launch site: {{launch.launch_site.site_name_long}}</mat-list-item>
+        <mat-list-item>{{launch.launch_site.site_name_long}}</mat-list-item>
       </mat-list>
       <img [src]="online$ ? launch.links.mission_patch_small : 'assets/images/rocket-default.png'" alt="">
     </mat-grid-tile>
