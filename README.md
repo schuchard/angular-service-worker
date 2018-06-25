@@ -1,5 +1,7 @@
 # NgServiceWorker
 
+Demo: [briebug-service-worker.netlify.com](https://briebug-service-worker.netlify.com)
+
 ## Commands
 
 ### Run the service worker locally
