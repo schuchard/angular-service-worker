@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { CoreModule } from '../core.module';
 import { SwUpdate } from '@angular/service-worker';
 import { UpdateAvailableEvent, UpdateActivatedEvent } from '@angular/service-worker/src/low_level';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, merge, fromEvent, of } from 'rxjs';
+import { mapTo } from 'rxjs/operators';
 // import { interval } from 'rxjs';
 
 @Injectable({
@@ -12,7 +13,7 @@ export class AppStatusService {
   swUpdates = new BehaviorSubject('');
 
   constructor(private updates: SwUpdate) {
-    // programmatically check for updates
+    // programmatically check for updates every 5 seconds
     // interval(5000).subscribe(() => this.updates.checkForUpdate());
 
     this.updates.available.subscribe((event: UpdateAvailableEvent) => {
@@ -36,5 +37,13 @@ export class AppStatusService {
 
   get updateAvailable() {
     return this.swUpdates.asObservable();
+  }
+
+  get online() {
+    return merge(
+      of(navigator.onLine),
+      fromEvent(window, 'online').pipe(mapTo(true)),
+      fromEvent(window, 'offline').pipe(mapTo(false))
+    );
   }
 }
