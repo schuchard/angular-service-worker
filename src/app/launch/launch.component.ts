@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { AppStatusService } from '../core/services/app-status.service';
+import { AppStatusService } from '../app-status.service';
 
 @Component({
   templateUrl: './launch.component.html',

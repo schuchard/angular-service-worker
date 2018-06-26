@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { CoreModule } from '../core.module';
 import { SwUpdate } from '@angular/service-worker';
 import { UpdateAvailableEvent, UpdateActivatedEvent } from '@angular/service-worker/src/low_level';
 import { BehaviorSubject, merge, fromEvent, of } from 'rxjs';
@@ -7,7 +6,7 @@ import { mapTo } from 'rxjs/operators';
 // import { interval } from 'rxjs';
 
 @Injectable({
-  providedIn: CoreModule,
+  providedIn: 'root',
 })
 export class AppStatusService {
   swUpdates = new BehaviorSubject('');
