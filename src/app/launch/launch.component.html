@@ -1,8 +1,8 @@
 <div ng-if="allLaunches | async">
-  <mat-grid-list cols="3" rowHeight="2:1" gutterSize="8px">
+  <mat-grid-list [cols]="cols | async" rowHeight="2:1" gutterSize="12px">
     <mat-grid-tile *ngFor="let launch of allLaunches">
       <mat-list>
-        <mat-list-item>Flight: {{launch.flight_number}} {{launch.launch_date_utc | date: 'mediumDate'}}</mat-list-item>
+        <mat-list-item>Flight: {{launch.flight_number}} on {{launch.launch_date_utc | date: 'mediumDate'}}</mat-list-item>
         <mat-list-item>{{launch.rocket.rocket_name}} - {{launch.launch_success ? 'success' : 'failure'}}</mat-list-item>
         <mat-list-item>{{launch.launch_site.site_name_long}}</mat-list-item>
       </mat-list>

@@ -19,6 +19,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './pageNotFound/pageNotFound.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { PageNotFoundComponent } from './pageNotFound/pageNotFound.component';
     MatListModule,
     MatGridListModule,
     MatTooltipModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
