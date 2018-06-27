@@ -35,6 +35,10 @@ export class AppStatusService {
 
   // update & reload the application when new assets have been download
   reloadApp() {
+    /**
+     * Calls post message to the Service Workers inner scope (ACTIVATE_UPDATE)
+     * https://developer.mozilla.org/en-US/docs/Web/API/Worker/postMessage
+     */
     return this.updates.activateUpdate().then(() => document.location.reload());
   }
 
