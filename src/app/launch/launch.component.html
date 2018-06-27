@@ -2,7 +2,9 @@
   <mat-grid-list [cols]="cols | async" rowHeight="2:1" gutterSize="12px">
     <mat-grid-tile *ngFor="let launch of allLaunches">
       <mat-list>
-        <mat-list-item>Flight: {{launch.flight_number}} on {{launch.launch_date_utc | date: 'mediumDate'}}</mat-list-item>
+        <mat-list-item>
+          <h4>Flight: {{launch.flight_number}} on {{launch.launch_date_utc | date: 'mediumDate'}}</h4>
+        </mat-list-item>
         <mat-list-item>{{launch.rocket.rocket_name}} - {{launch.launch_success ? 'success' : 'failure'}}</mat-list-item>
         <mat-list-item>{{launch.launch_site.site_name_long}}</mat-list-item>
       </mat-list>
@@ -10,3 +12,4 @@
     </mat-grid-tile>
   </mat-grid-list>
 </div>
+G
