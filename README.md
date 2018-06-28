@@ -2,9 +2,24 @@
 
 Demo: [briebug-service-worker.netlify.com](https://briebug-service-worker.netlify.com)
 
+## Getting Started
+
+[yarn](https://yarnpkg.com/en/docs/install#mac-stable) vs npm
+
+```shell
+yarn === npm install
+yarn CMD === npm run CMD
+```
+
+### Install dependencies
+
+```shell
+yarn
+```
+
 ## Commands
 
-### Run the service worker locally
+### Run the service worker app locally
 
 This does a `prod` build and serves the static files from `./dist`
 
@@ -22,7 +37,9 @@ yarn start:server
 
 ### Register a new service worker configuration
 
-This will update the service worker to the dist folder. With `yarn start` running you can reload the page and pick up the service worker update.
+This will update the service worker config file, `ngsw.json`, in the `dist` folder.
+
+After making a change to `ngsw-config.json` and with `yarn start` running you can run this command, reload the page, and the client will register the new service worker changes. 
 
 ```shell
 yarn ngsw
